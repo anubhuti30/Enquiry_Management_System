@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Admin Login</title>
+    <style>
+        body {
+            background-color: #12002a;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .containerp {
+            width: 350px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid #ce93d8;
+            border-radius: 15px;
+            padding: 40px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #f3c4ff;
+            font-size: 34px;
+            font-weight: 700;
+            margin: 0 0 24px;
+            text-align: center;
+            letter-spacing: 0;
+        }
+
+        p {
+            color: #ce93d8;
+            margin-bottom: 25px;
+        }
+
+        label {
+            color: #ce93d8;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ce93d8;
+            background-color: rgba(255,255,255,0.07);
+            color: white;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #4a148c, #e040fb);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .error {
+            color: #ff5252;
+            display: none;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="containerp">
+    <h1>Admin Panel</h1>
+    <div class="container">
+        <div class="error" id="loginError">Invalid username or password</div>
+        <form action="admin_login.jsp" method="post">
+
+            <label>Username</label>
+            <input type="text" name="username"
+                   placeholder="Enter Username" required/>
+
+            <label>Password</label>
+            <input type="password" name="password"
+                   placeholder="Enter password" required/>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+</div>
+<script>
+    if (new URLSearchParams(window.location.search).get("error") === "invalid") {
+        document.getElementById("loginError").style.display = "block";
+    }
+</script>
+</body>
+</html>

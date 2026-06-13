@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Enquiry Form</title>
+    <style>
+        body {
+            background-color: #12002a;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid #ce93d8;
+            border-radius: 15px;
+            padding: 40px;
+            width: 420px;
+        }
+        h1 {
+            color: #e040fb;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        p {
+            color: #ce93d8;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        label {
+            color: #ce93d8;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            border: 1px solid #ce93d8;
+            background-color: rgba(255,255,255,0.07);
+            color: white;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        select option {
+            background-color: #2a0055;
+            color: white;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #4a148c, #e040fb);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #6a1aac, #ff40ff);
+        }
+        .admin-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .admin-link a {
+            color: #9c7aad;
+            font-size: 13px;
+            text-decoration: none;
+        }
+        .admin-link a:hover {
+            color: #e040fb;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Enquiry Management Form</h1>
+    <p>Please fill the form to submit your enquiry.</p>
+    <form action="enquiry.jsp" method="post">
+        <label>Full Name</label>
+        <input type="text" name="fullName" placeholder="Enter your full name" required>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="Enter your phone number" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email address" required>
+
+        <label>Course Interested In</label>
+        <select name="course" required>
+            <option value="">-- Select Course --</option>
+            <option value="Web Development">Web Development</option>
+            <option value="App Development">App Development</option>
+            <option value="AI / ML">AI / ML</option>
+            <option value="Cloud Computing">Cloud Computing</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+        </select>
+
+        <label>Reference</label>
+        <input type="text" name="reference" placeholder="Enter who referred you">
+
+        <button type="submit">Submit Enquiry</button>
+    </form>
+    <div class="admin-link">
+        <a href="admin.html">Admin Panel</a>
+    </div>
+</div>
+</body>
+</html>
